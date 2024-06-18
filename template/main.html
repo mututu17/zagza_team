@@ -31,6 +31,10 @@
                 <a href="page.html"><img src="../images/logo.png" alt="로고" width="60" height="60"></a> <!--로고크기수정-->
                 <a href="page.html">zagza</a>
             </div>
+            <div class="desktop-drawing-buttons">
+                <button id="drawing-desktop" class="button">자전거 도로 그리기</button> <!-- 데스크탑에선 모바일버튼 숨기기-->
+                <button id="delete-desktop" class="button">삭제</button> <!-- 데스크탑에선 모바일버튼 숨기기-->
+            </div>
             <!-- <div class="navbar_menu">
                         <a href="#">소개</a> 
                         <a href="main.html">지도</a>
@@ -61,12 +65,7 @@
                     </select>
                 </li>
             </ul>
-            <div class="measure-buttons">
-                <button id="drawing-desktop" class="button">자전거도로 그리기</button> <!-- 데스크탑에선 모바일버튼 숨기기-->
-                <button id="delete-desktop" class="button">삭제</button> <!-- 데스크탑에선 모바일버튼 숨기기-->
-                <button id="drawing-mobile" class="button">자전거도로 그리기</button> <!-- 모바일에선 데스크탑버튼 숨기기-->
-                <button id="delete-mobile" class="button">삭제</button> <!-- 모바일에선 데스크탑버튼 숨기기-->
-            </div>
+
         </nav>
     </header>
     <!--데스크톱 해더 끝-->
@@ -102,10 +101,10 @@
             </label>
             <nav class="information"> <!--설명 부분을 nav 박스로 감싸고 class명을 information으로 추가-->
                 <div class="lb-wrap">
-                    <a href="#" id="link" target="_blank"><img src="..\images\부경대.png" id="image" class="aside-image" width="240" ,
+                    <a href="#" id="link" target="_blank"><img src="..\images\bike-default.jpg" id="image" class="aside-image" width="240" ,
                             height="300"></a>
-                    <a href="#" id="attraction" class="linkT" target="_blank">부경대학교</a>
-                    <p class="describe">코스를 누르면 해당 자전거 코스를 소개합니다.</p>
+                    <a href="#" id="attraction" class="linkT" target="_blank">코스 이름</a>
+                    <p class="describe">표시된 코스를 누르면 해당 자전거 코스를 소개합니다.</p>
                 </div>
                 <div class="text-infor">
                     <p style="font-size: 15px;">시작 위치: <br><span class="gugunNm"></span><br><span
@@ -137,13 +136,17 @@
                 </div>
                 <div class="mobile-logo-box">
                 <a href="page.html"><span class="mobile-logo">zagza</span></a>
-            </div>
-            <div class="filter-manual">
-                <button class="filter-manual-btn" type="button">?</button>
-            </div>
-            <div id="mobile-container" class="closed">
-                <button type="button" id="mobile-toggle-aside" class="toggle-button">정보</button>
-            </div>  
+                </div>
+                <div class="filter-manual">
+                    <button class="filter-manual-btn" type="button">?</button>
+                </div>
+                <div id="mobile-container" class="closed">
+                    <button type="button" id="mobile-toggle-aside" class="toggle-button">정보</button>
+                </div>   
+                <div id="mobile-drawing-buttons" class="mobile-drawing-buttons">
+                    <button id="drawing-mobile" class="button">자전거도로 그리기</button> <!-- 모바일에선 데스크탑버튼 숨기기-->
+                    <button id="delete-mobile" class="button">삭제</button> <!-- 모바일에선 데스크탑버튼 숨기기-->
+                </div>
             </header>
             <main id="mobile-main">
                 <div class="mobile-body">
@@ -187,11 +190,11 @@
         <aside id="mobile-aside" class="closed">
             <div class="mobile-aside-container">
                 <div class="mobile-image-wrapper">
-                    <a href="#" id="link" target="_blank"><img src="..\images\부경대.png" id="image" class="mobile-image"></a>
+                    <a href="#" id="link" target="_blank"><img src="..\images\bike-default.jpg" id="image" class="mobile-image"></a>
                 </div>
                 <!--이미지 옆 설명텍스트-->
                 <div class="mobile-text-info"> 
-                    <p style="font-weight: bolder; font-size: 110%;"><a href="#" id="attraction" class="mobile-link" target="_blank">부경대학교</a></p>
+                    <p style="font-weight: bolder; font-size: 110%;"><a href="#" id="attraction" class="mobile-link" target="_blank">코스 이름</a></p>
                     <hr>
                     <p><span style="font-weight: bolder;">거리: </span><span class="total"></span>KM</p>
                     <hr>
@@ -199,7 +202,7 @@
                     <hr>
                     <p><span style="font-weight: bolder;">도착 위치:</span> <span class="gugunNm"></span><br><span class="endSpot"></span></p>
                     <hr>
-                    <p class="describe">코스를 누르면 해당 자전거 코스를 소개합니다.</p>
+                    <p class="describe">표시된 코스를 누르면 해당 자전거 코스를 소개합니다.</p>
                     <hr>
                 </div>
             </aside>
@@ -210,6 +213,8 @@
     <script src="../js/app.js"></script>
     <script src="../js/Modalpopup.js"></script>
     <!--==============================================================지도 설정 끝===============================================================================-->
+
+    <script src="../js/scripts.js"></script>
 </body>
 
 </html>
