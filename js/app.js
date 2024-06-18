@@ -219,7 +219,7 @@ $.extend(Drawing.prototype, {
         }
 
         this.$btnDrawing.removeClass('control-on').blur();
-        this.$btnDrawing.text('자전거도로 그리기');
+        this.$btnDrawing.text('자전거 도로 그리기');
         this.map.setCursor('auto');
 
         delete this._lastDistance;
