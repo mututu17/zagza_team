@@ -109,6 +109,50 @@ body {
   border-left: none;
 }
 
+.desktop-drawing-buttons {
+  display: none;
+}
+@media (min-width: 1020px) {
+  .desktop-drawing-buttons {
+    display: flex;
+  }
+}
+@media (min-width: 1400px) {
+  .desktop-drawing-buttons {
+    display: flex;
+  }
+}
+
+#drawing-desktop {
+  border-radius: 20px;
+  border: 1px solid lightcyan;
+  background-color: rgb(150, 225, 255);
+  padding: 5px;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  color: white;
+  margin-top: 15px;
+  margin-right: 10px;
+  width: 160px;
+  height: 40px;
+  font-size: 16px;
+}
+
+#delete-desktop {
+  border-radius: 20px;
+  border: 1px solid lightcyan;
+  background-color: rgb(150, 225, 255);
+  padding: 5px;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  color: white;
+  margin-top: 15px;
+  width: 70px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
 @keyframes navbarBottom {
   0% {
     transform: translateY(-70%);
@@ -178,7 +222,7 @@ body {
   background: linear-gradient(to bottom, #dfdfdf 100%, #ffffff);
 }
 
-#manual_btn {
+.desktop-manual_btn {
   display: none;
   position: absolute;
   border-radius: 50%;
@@ -188,12 +232,12 @@ body {
   top: 2%;
 }
 @media (min-width: 1020px) {
-  #manual_btn {
+  .desktop-manual_btn {
     display: inline;
   }
 }
 @media (min-width: 1400px) {
-  #manual_btn {
+  .desktop-manual_btn {
     display: inline;
   }
 }
@@ -240,25 +284,43 @@ body {
   }
 }
 
+.modal-content::-webkit-scrollbar {
+  display: none; /* 크롬, 사파리, 오페라 스크롤바 삭제 */
+}
+
 .modal-content {
   display: none;
-  background-color: #F0F9FC;
-  margin: 10% auto;
-  padding: 20px;
-  border: 1px solid #888;
-  width: 30%;
-  height: 60%;
-  text-align: center;
 }
 @media (min-width: 1020px) {
   .modal-content {
     display: block;
+    -ms-overflow-style: none; /* 익스플로러, 앳지 스크롤바 삭제*/
+    scrollbar-width: none; /* 파이어폭스 스크롤바 삭제*/
     background-color: #F0F9FC;
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 30%;
-    height: 60%;
+    width: 50%;
+    height: 70%;
+    border-radius: 30px;
+    overflow-y: scroll;
+    min-width: 646px;
+    max-width: 712px;
+  }
+  .modal-content ul {
+    list-style: none;
+    padding-left: 0px;
+  }
+  .modal-content span {
+    display: flex;
+    margin-top: 14px;
+    justify-content: center;
+  }
+  .modal-content img {
+    width: 100px;
+  }
+  .modal-content h3 {
+    background-color: #cfcfcf;
   }
 }
 @media (min-width: 1400px) {
@@ -268,41 +330,75 @@ body {
     margin: 10% auto;
     padding: 20px;
     border: 1px solid #888;
-    width: 30%;
-    height: 60%;
+    width: 50%;
+    height: 70%;
+    border-radius: 30px;
   }
+}
+
+.manual_thema_logo {
+  flex-direction: column;
+  color: #ffffff;
+}
+
+#forestgreen {
+  justify-content: center;
+  background-color: forestgreen;
+}
+
+#turquoise {
+  justify-content: center;
+  background-color: turquoise;
+}
+
+#cobalt_blue {
+  justify-content: center;
+  background-color: #00498c;
+}
+
+#cadetblue {
+  justify-content: center;
+  background-color: cadetblue;
 }
 
 .modal_frame {
   display: none;
-  justify-content: center;
 }
 @media (min-width: 1020px) {
   .modal_frame {
     display: flex;
+    justify-content: center;
+    height: 13%;
   }
 }
 @media (min-width: 1400px) {
   .modal_frame {
     display: flex;
+    justify-content: center;
   }
 }
 
 .close {
-  position: absolute;
-  right: 35%;
-  font-size: 20px;
-  font-weight: bold;
-  cursor: pointer;
+  display: none;
 }
 @media (min-width: 1020px) {
   .close {
     display: block;
+    position: relative;
+    left: 35%;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
   }
 }
 @media (min-width: 1400px) {
   .close {
     display: block;
+    position: relative;
+    left: 35%;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
   }
 }
 
@@ -702,6 +798,59 @@ body {
   transform: translateY(-5px) rotate(-135deg);
 }
 
+.mobile-drawing-buttons {
+  z-index: 2;
+  display: flex;
+  position: absolute;
+  top: 55px;
+  right: 3%;
+  transition: top 0.5s;
+}
+@media (min-width: 1020px) {
+  .mobile-drawing-buttons {
+    display: none;
+  }
+}
+@media (min-width: 1400px) {
+  .mobile-drawing-buttons {
+    display: none;
+  }
+}
+
+.mobile-drawing-buttons.on {
+  display: none;
+}
+
+#drawing-mobile {
+  border-radius: 20px;
+  border: 1px solid lightcyan;
+  background-color: rgb(150, 225, 255);
+  padding: 5px;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  color: white;
+  margin: 5px;
+  width: 140px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#delete-mobile {
+  border-radius: 20px;
+  border: 1px solid lightcyan;
+  background-color: rgb(150, 225, 255);
+  padding: 5px;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  color: white;
+  margin: 5px;
+  width: 70px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
 .mobile-logo-box {
   position: relative;
   top: 7px;
@@ -760,6 +909,80 @@ body {
   background-color: #fff;
 }
 
+.mobile_modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7019607843);
+  animation: fadein 0.5s;
+}
+@media (min-width: 1020px) {
+  .mobile_modal {
+    display: none;
+  }
+}
+@media (min-width: 1400px) {
+  .mobile_modal {
+    display: none;
+  }
+}
+
+.mobile_modal-content::-webkit-scrollbar {
+  display: none; /* 크롬, 사파리, 오페라 스크롤바 삭제 */
+}
+
+.mobile_modal-content {
+  display: block;
+  -ms-overflow-style: none; /* 익스플로러, 앳지 스크롤바 삭제*/
+  scrollbar-width: none; /* 파이어폭스 스크롤바 삭제*/
+  background-color: #F0F9FC;
+  margin: 25% auto;
+  padding: 2.5%;
+  border: 1px solid #888;
+  width: 85%;
+  height: 70%;
+  min-width: 389px;
+  max-width: 389px;
+  border-radius: 20px;
+  overflow-y: scroll;
+}
+.mobile_modal-content ul {
+  list-style: none;
+  padding-left: 0px;
+}
+.mobile_modal-content img {
+  width: 100px;
+}
+.mobile_modal-content span {
+  display: inline-block;
+  justify-content: center;
+}
+.mobile_modal-content h3 {
+  background-color: #cfcfcf;
+}
+
+.mobile_manual_thema_logo {
+  flex-direction: column;
+  color: #ffffff;
+}
+
+.mobile_modal_frame {
+  display: flex;
+  justify-content: center;
+  height: 11%;
+}
+
+.mobile_close {
+  display: block;
+  position: relative;
+  margin-left: 55%;
+  margin-top: 7px;
+}
+
 #mobile-container {
   z-index: 2;
   display: flex;
@@ -770,12 +993,12 @@ body {
 }
 
 .toggle-button {
-  border-radius: 15px;
-  border: 1px solid;
-  background-color: skyblue;
+  border-radius: 20px;
+  border: 1px solid lightcyan;
+  background-color: rgb(150, 225, 255);
   padding: 5px;
   font-family: "paybooc-Light", sans-serif;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   color: white;
   margin: 0px;
   width: 70px;
