@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Test</title>
+    <link rel="stylesheet" href="../css/test.css">
+    <script src="../js/jquery-1.9.1.js"></script>
+    <!--폰트 적용-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <!--USERID 바꾸기!!-->
+    <script type="text/javascript" src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=USERID&submodules=drawing"></script>
+</head>
+<body>
+
+<!--============================================================데스크톱 웹사이트 시작=================================================================================-->
+
+<!--데스크톱 해더 시작-->
+    <header id="desktop-header">
+        <nav class="navbar">
+            <div class="navbar_logo">
+                <a href="page.html"><img src="../images/logo.png" alt="로고" width="130" height="130"></a>
+                <a href="page.html">zagza</a>
+            </div>
+            <div class="navbar_menu">
+                <a href="#">소개</a>
+                <a href="main.html">지도</a>
+                <a href="#">사용방법</a>
+            </div>
+        </nav>
+    </header>
+<!--데스크톱 해더 끝-->
+
+<!--데스크톱 메인, 사이드바 시작-->   
+   <p>사용방법</p>
+<!--데스크톱 메인, 사이드바 끝-->
+
+<!--============================================================데스크톱 웹 끝=================================================================================-->
+        
+<!--==============================================================모바일 웹 시작===============================================================================-->
+<!--모바일 헤더-->
+    <!--flex로 조절해보기-->
+<div class="wrapper">
+    <div class="container">
+        <header id="mobile-header">
+            <div class="mobile-head">
+                <div class="slide-open" id="slide-open">
+                    <span class="burgur" id="burgur">
+                        <span class="top-line"></span>
+                        <span class="bot-line"></span>
+                    </span>
+                </div>
+            </div>
+        </header>
+        <main id="mobile-main">
+            <div class="mobile-body">
+                <!--모바일 컨텐츠(지도) 시작-->
+                <div class="map-container" id="map-container-mobile">
+                    <div id="map-mobile">
+                    </div>
+                </div>
+                <!--모바일 필터 메뉴 시작-->
+                <div class="filter" id="filter">
+                    <div class="filter-item">
+                        <label for="combo1">거리순</label>
+                        <select id="combo1" class="filter-comboBox">
+                            <option value="1-1">0 ~ 3 km</option>
+                            <option value="1-2">3 ~ 6 km</option>
+                            <option value="1-3">6 ~ 9 km</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label for="combo2">장소</label>
+                        <select id="combo2" class="filter-comboBox">
+                            <option value="2-1">해운대구</option>
+                            <option value="2-2">수영구</option>
+                            <option value="2-3">남구</option>
+                        </select>
+                    </div>
+                    <div class="filter-item">
+                        <label for="combo3">풍경</label>
+                        <select id="combo3" class="filter-comboBox">
+                            <option value="3-1">산</option>
+                            <option value="3-2">바다</option>
+                            <option value="3-3">도시</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+        </main>  
+        <!--여기에 아래 부가 요소들 설정-->
+        <aside id="mobile-aside">
+            <div class="mobile-summary">
+                정보 요약 창
+            </div>
+        </aside>
+    </div>    
+</div>
+<!--==============================================================모바일 끝===============================================================================-->
+
+<!--==============================================================지도 설정 사작===============================================================================-->
+<!--수영강 좌표-->
+<script id="polyline-data">
+    var polylinePath = [
+        new naver.maps.LatLng(35.16651994428058, 129.12492786885343),
+        new naver.maps.LatLng(35.170958777178, 129.12222329082113),
+        new naver.maps.LatLng(35.17286388547741, 129.12105910401624),
+        new naver.maps.LatLng(35.17550898903027, 129.1187139152225),
+        new naver.maps.LatLng(35.17670557434158, 129.11821321560998),
+        new naver.maps.LatLng(35.17712651056232, 129.11809788062234),
+        new naver.maps.LatLng(35.18097447459887, 129.11777658205753),
+        new naver.maps.LatLng(35.18111488274443 , 129.11778127820347),
+        new naver.maps.LatLng(35.18587322019679 , 129.1159275694985),
+        new naver.maps.LatLng(35.186399216133054 , 129.1156229891022),
+        new naver.maps.LatLng(35.18950866433023 , 129.1147162550351),
+        new naver.maps.LatLng(35.19373472193521 , 129.11376761884807),
+        new naver.maps.LatLng(35.1941721957518 , 129.11375580772264),
+        new naver.maps.LatLng(35.19537559910043 , 129.11398294312045),
+        new naver.maps.LatLng(35.195628007480146 , 129.11393625741638),
+        new naver.maps.LatLng(35.19695364934315 , 129.11428635081145),
+        //new naver.maps.LatLng(35.19537559910043 , 129.11398294312045),
+        //new naver.maps.LatLng(35.19537559910043 , 129.11398294312045),
+        //new naver.maps.LatLng(35.19537559910043 , 129.11398294312045),
+        //new naver.maps.LatLng(35.19537559910043 , 129.11398294312045),
+        //new naver.maps.LatLng(35.19537559910043 , 129.11398294312045),
+        //new naver.maps.LatLng(35.19537559910043 , 129.11398294312045),
+    ];
+</script>
+
+<!-- 지도 내부 조작을 위한 스크립트 -->
+<script id="code">
+    // 지도 크기 변환 코드 시작
+    var desktopMap, mobileMap;
+    var bicycleLayer = new naver.maps.BicycleLayer();   // 자전거 레이어 표현 변수(빨간 코스)
+    function initMap() {
+        var mapOptions = {
+            center: new naver.maps.LatLng(35.18097447459887, 129.11777658205753)
+        };
+        // 데스크톱버전 지도 변수
+        desktopMap = new naver.maps.Map('map-desktop', mapOptions);
+        // 모바일 버전 지도 변수
+        mobileMap = new naver.maps.Map('map-mobile', mapOptions);
+
+        // 자전거 레이어 표시
+        naver.maps.Event.once(desktopMap, 'init', function() {
+            bicycleLayer.setMap(desktopMap);    // 기본 자전거 코스 추가
+            addPolyline(desktopMap);            // 추천 자전거 코스 추가
+            
+        });
+
+        naver.maps.Event.once(mobileMap, 'init', function() {
+            bicycleLayer.setMap(mobileMap);     // 기본 자전거 코스 추가
+            addPolyline(mobileMap);             // 추천 자전거 코스 추가
+        });
+        
+    }
+    
+    $(document).ready(function() {
+        initMap();
+    });
+
+    $(window).resize(function() {
+        if ($(window).width() <= 768) {
+            naver.maps.Event.trigger(mobileMap, 'resize');
+        } else {
+            naver.maps.Event.trigger(desktopMap, 'resize');
+        }
+    });
+    // 지도 크기 변환 코드 끝
+    
+    // 폴리라인 추가 함수
+    function addPolyline(map) {
+        // 폴리라인 추가
+        var polyline = new naver.maps.Polyline({
+            path: polylinePath,
+            strokeColor: '#00CA00',
+            strokeOpacity: 0.8,
+            strokeWeight: 6,
+            zIndex: 2,
+            clickable: true,
+            map: map
+        });
+
+        /*폴리라인에 대한 이벤트 함수*/
+        /* 폴리라인 각각 적용할 수 있을까 조사 요망*/
+        naver.maps.Event.addListener(polyline, "mouseover", function () {
+            polyline.setOptions({
+                strokeWeight: 20
+            });
+        });
+
+        naver.maps.Event.addListener(polyline, "mouseout", function () {
+            polyline.setOptions({
+                strokeWeight: 6
+            });
+        });
+
+        naver.maps.Event.addListener(polyline, "mousedown", function () {
+            polyline.setOptions({
+                strokeWeight: 20
+            });
+        });
+    
+        naver.maps.Event.addListener(polyline, "mouseup", function () {
+            polyline.setOptions({
+                strokeWeight: 6
+            });
+        });
+
+
+        naver.maps.Event.addListener(polyline, "click", function () {
+            alert('수영강 코스입니다.');
+        });
+    }
+    
+    // 폴리라인 그리는 함수
+    naver.maps.onJSContentLoaded = function() {
+        var drawingManager = new naver.maps.drawing.DrawingManager({map: desktopMap});
+    };
+    naver.maps.onJSContentLoaded = function() {
+        var drawingManager = new naver.maps.drawing.DrawingManager({map: mobileMap});
+    };
+</script>
+<!--==============================================================지도 설정 끝===============================================================================-->
+
+<script src="../js/scripts.js"></script>
+</body>
+</html>

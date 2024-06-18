@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Merge Test</title>
+    <link rel="stylesheet" href="../css/scss/test.css">
+    <script src="../js/jquery-1.9.1.js"></script>
+    <!--폰트 적용-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anta&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+    <!--USERID 바꾸기!!-->
+    <script type="text/javascript"
+        src="https://openapi.map.naver.com/openapi/v3/maps.js?ncpClientId=z5nfvv180p&submodules=drawing"></script>
+</head>
+
+<body>
+    <script type="module" src="../js/addTagInCombobox.js"></script>
+
+
+    <!--============================================================데스크톱 웹사이트 시작=================================================================================-->
+
+    <!--데스크톱 해더 시작-->
+    <header id="desktop-header">
+        <nav class="navbar">
+            <div class="navbar_logo">
+                <a href="page.html"><img src="../images/logo.png" alt="로고" width="60" height="60"></a> <!--로고크기수정-->
+                <a href="page.html">zagza</a>
+            </div>
+            <!-- <div class="navbar_menu">
+                        <a href="#">소개</a> 
+                        <a href="main.html">지도</a>
+                        <a href="method.html">사용방법</a>
+                        </div> -->
+            <!--메뉴바 삭제 + 필터 추가-->
+            <ul class="filters">
+                <li>
+                    <select id="거리순" class="combo-box">
+                        <option value="" selected>거리순</option>
+                        <option value="0 - 1">0 ~ 1 km</option>
+                        <option value="1 - 3">1 ~ 3 km</option>
+                        <option value="3 ~ ">3 ~ ... km</option>
+                    </select>
+                </li>
+                <li>
+                    <select id="장소" class="combo-box">
+                        <option value="" selected>장소</option>
+                    </select>
+                </li>
+                <li>
+                    <select id="풍경" class="combo-box">
+                        <option value="" selected>풍경</option>
+                        <option value="공원">공원</option>
+                        <option value="강변">강변</option>
+                        <option value="바다">바다</option>
+                        <option value="도심">도심</option>
+                    </select>
+                </li>
+            </ul>
+            <div class="drawing-buttons">
+                <button id="drawing-desktop" class="button">자전거도로 그리기</button> <!-- 데스크탑에선 모바일버튼 숨기기-->
+                <button id="delete-desktop" class="button">삭제</button> <!-- 데스크탑에선 모바일버튼 숨기기-->
+                <button id="drawing-mobile" class="button">자전거도로 그리기</button> <!-- 모바일에선 데스크탑버튼 숨기기-->
+                <button id="delete-mobile" class="button">삭제</button> <!-- 모바일에선 데스크탑버튼 숨기기-->
+            </div>
+        </nav>
+    </header>
+    <!--데스크톱 해더 끝-->
+    <button id="manual_btn" type="button">?</button> <!-- 사용설명 팝업창을 띄우는 물음표 버튼-->
+    <div id="myModal" class="modal">
+        <div class="modal-content">
+            <div class="modal_frame">
+                <h2>사용방법</h2>
+                <span class="close" id="closeModalButton">&times;</span>
+            </div>
+            <p>지도에 표시되는 마커를 누르면 추천하는 코스가 나옵니다.</p>
+            <p>오른쪽 위 필터를 사용하시면 원하는 코스를 쉽게 걸러 보실 수 있습니다.</p>
+            <p>지도 위의 아이콘을 선택하시면 원하는 자전거 코스를 그릴 수 있습니다.</p>
+        </div>
+    </div>
+
+    <script src="../js/Modalpopup.js"></script>
+    <!--데스크톱 메인, 사이드바 시작-->
+
+    <div class="content">
+        <main>
+            <!-- 지도를 만드는 div 생성 -->
+            <div class="map-container" id="map-container-desktop">
+                <div id="map-desktop">
+                </div>
+            </div>
+        </main>
+        <!--변경점: class명 변경, toggleNav() 함수 사용 X-->
+
+        <aside class="toggle-aside"> <!--class 명 toggle-aside로 변경 -->
+            <input type="checkbox" id="aside-check-1"> <!--toggleNav()함수 사용 X, checkbox 형태로 변경, id 변경-->
+            <label for="aside-check-1">
+            </label>
+            <nav class="information"> <!--설명 부분을 nav 박스로 감싸고 class명을 information으로 추가-->
+                <div class="lb-wrap">
+                    <a href="#" id="link" target="_blank"><img src="..\images\부경대.png" id="image" class="aside-image" width="240" ,
+                            height="300"></a>
+                    <a href="#" id="attraction" class="linkT" target="_blank">부경대학교</a>
+                    <p class="describe">코스를 누르면 해당 자전거 코스를 소개합니다.</p>
+                </div>
+                <div class="text-infor">
+                    <p style="font-size: 15px;">시작 위치: <br><span class="gugunNm"></span><br><span
+                            class="startSpot"></span></p>
+                    <p style="font-size: 15px;">도착 위치: <br><span class="gugunNm"></span><br><span
+                            class="endSpot"></span></p>
+                    <p style="font-size: 15px;">거리: <span class="total">00</span>KM</p>
+                </div>
+            </nav>
+        </aside>
+    </div>
+    <!--데스크톱 메인, 사이드바 끝-->
+
+    <!--============================================================데스크톱 웹 끝=================================================================================-->
+
+    <!--==============================================================모바일 웹 시작===============================================================================-->
+    <!--모바일 헤더-->
+    <!--flex로 조절해보기-->
+    <div class="wrapper">
+        <div class="container">
+            <header id="mobile-header">
+                <div class="mobile-head">
+                    <div class="slide-open" id="slide-open">
+                        <span class="burgur" id="burgur">
+                            <span class="top-line"></span>
+                            <span class="bot-line"></span>
+                        </span>
+                    </div>
+                </div>
+                <div class="mobile-logo-box">
+                <a href="page.html"><span class="mobile-logo">zagza</span></a>
+            </div>
+            <div class="filter-manual">
+                <button class="filter-manual-btn" type="button">?</button>
+            </div>
+            <div id="mobile-container" class="closed">
+                <button type="button" id="mobile-toggle-aside" class="toggle-button">정보</button>
+            </div>  
+            </header>
+            <main id="mobile-main">
+                <div class="mobile-body">
+                    <!--모바일 컨텐츠(지도) 시작-->
+                    <div class="map-container" id="map-container-mobile">
+                        <div id="map-mobile">
+                        </div>
+                    </div>
+                    <!--모바일 필터 메뉴 시작-->
+                    <div class="filter" id="filter">
+                        <div class="filter-item">
+                            <label for="combo1">거리순</label>
+                            <select id="거리순" class="filter-comboBox">
+                                <option value="" selected>거리순</option>
+                                <option value="0 - 1">0 ~ 1 km</option>
+                                <option value="1 - 3">1 ~ 3 km</option>
+                                <option value="3 ~ ">3 ~ ... km</option>
+                            </select>
+                        </div>
+                        <div class="filter-item">
+                            <label for="combo2">장소</label>
+                            <select id="장소" class="filter-comboBox">
+                                <option value="" selected>장소</option>
+                            </select>
+                        </div>
+                        <div class="filter-item">
+                            <label for="combo3">풍경</label>
+                            <select id="풍경" class="filter-comboBox">
+                                <option value="" selected>풍경</option>
+                                <option value="공원">공원</option>
+                                <option value="강변">강변</option>
+                                <option value="바다">바다</option>
+                                <option value="도심">도심</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </main>
+
+        <!--정보 요약 창-->
+        <aside id="mobile-aside" class="closed">
+            <div class="mobile-aside-container">
+                <div class="mobile-image-wrapper">
+                    <a href="#" id="link" target="_blank"><img src="..\images\부경대.png" id="image" class="mobile-image"></a>
+                </div>
+                <!--이미지 옆 설명텍스트-->
+                <div class="mobile-text-info"> 
+                    <p style="font-weight: bolder; font-size: 110%;"><a href="#" id="attraction" class="mobile-link" target="_blank">부경대학교</a></p>
+                    <hr>
+                    <p><span style="font-weight: bolder;">거리: </span><span class="total"></span>KM</p>
+                    <hr>
+                    <p><span style="font-weight: bolder;">시작 위치:</span> <span class="gugunNm"></span><span class="startSpot"></span></p>
+                    <hr>
+                    <p><span style="font-weight: bolder;">도착 위치:</span> <span class="gugunNm"></span><br><span class="endSpot"></span></p>
+                    <hr>
+                    <p class="describe">코스를 누르면 해당 자전거 코스를 소개합니다.</p>
+                    <hr>
+                </div>
+            </aside>
+        </div>
+    </div>
+    <!--==============================================================모바일 끝===============================================================================-->
+    <script src="../js/polyline-data.js"></script>
+    <script src="../js/app.js"></script>
+    <script src="../js/Modalpopup.js"></script>
+    <!--==============================================================지도 설정 끝===============================================================================-->
+</body>
+
+</html>
