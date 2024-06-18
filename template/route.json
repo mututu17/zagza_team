@@ -121,17 +121,6 @@
         "scene" : "바다"
     },
     {
-        "gugunNm": "부산광역시 사하구",
-        "startSpot": "다대동 482-6",
-        "endSpot": "다대동 1543",
-        "total": "1.1",
-        "url": "https://www.visitbusan.net/uploadImgs/files/cntnts/20191229143230630",
-        "attraction": "다대포 해수욕장",
-        "link": "https://www.visitbusan.net/kr/index.do?menuCd=DOM_000000201001001000&uc_seq=366&lang_cd=ko",
-        "describe": "아름다운 몽환의 바다",
-        "scene" : "바다"
-    },
-    {
         "gugunNm": "부산광역시 서구",
         "startSpot": "암남동 123-59",
         "endSpot": "암남동 135-29",
