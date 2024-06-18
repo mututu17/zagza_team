@@ -109,6 +109,50 @@ body {
   border-left: none;
 }
 
+.desktop-drawing-buttons {
+  display: none;
+}
+@media (min-width: 1020px) {
+  .desktop-drawing-buttons {
+    display: flex;
+  }
+}
+@media (min-width: 1400px) {
+  .desktop-drawing-buttons {
+    display: flex;
+  }
+}
+
+#drawing-desktop {
+  border-radius: 20px;
+  border: 1px solid lightcyan;
+  background-color: rgb(150, 225, 255);
+  padding: 5px;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  color: white;
+  margin-top: 15px;
+  margin-right: 10px;
+  width: 160px;
+  height: 40px;
+  font-size: 16px;
+}
+
+#delete-desktop {
+  border-radius: 20px;
+  border: 1px solid lightcyan;
+  background-color: rgb(150, 225, 255);
+  padding: 5px;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  color: white;
+  margin-top: 15px;
+  width: 70px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
 @keyframes navbarBottom {
   0% {
     transform: translateY(-70%);
@@ -702,6 +746,59 @@ body {
   transform: translateY(-5px) rotate(-135deg);
 }
 
+.mobile-drawing-buttons {
+  z-index: 2;
+  display: flex;
+  position: absolute;
+  top: 55px;
+  right: 3%;
+  transition: top 0.5s;
+}
+@media (min-width: 1020px) {
+  .mobile-drawing-buttons {
+    display: none;
+  }
+}
+@media (min-width: 1400px) {
+  .mobile-drawing-buttons {
+    display: none;
+  }
+}
+
+.mobile-drawing-buttons.on {
+  display: none;
+}
+
+#drawing-mobile {
+  border-radius: 20px;
+  border: 1px solid lightcyan;
+  background-color: rgb(150, 225, 255);
+  padding: 5px;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  color: white;
+  margin: 5px;
+  width: 140px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+#delete-mobile {
+  border-radius: 20px;
+  border: 1px solid lightcyan;
+  background-color: rgb(150, 225, 255);
+  padding: 5px;
+  font-family: "paybooc-Light", sans-serif;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  color: white;
+  margin: 5px;
+  width: 70px;
+  height: 40px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
 .mobile-logo-box {
   position: relative;
   top: 7px;
@@ -770,12 +867,12 @@ body {
 }
 
 .toggle-button {
-  border-radius: 15px;
-  border: 1px solid;
-  background-color: skyblue;
+  border-radius: 20px;
+  border: 1px solid lightcyan;
+  background-color: rgb(150, 225, 255);
   padding: 5px;
   font-family: "paybooc-Light", sans-serif;
-  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   color: white;
   margin: 0px;
   width: 70px;
