@@ -904,7 +904,7 @@ body {
   width: 30px;
 }
 
-.filter-manual-btn {
+#filter-manual-btn {
   float: right;
   width: 25px;
   height: 25px;
