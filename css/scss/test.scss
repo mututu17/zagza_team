@@ -256,7 +256,7 @@ body {
 }
 
 //사용방법 팝업창 버튼
-#manual_btn{
+.desktop-manual_btn{
     display: none;
     position: absolute;
     border-radius: 50%;
@@ -318,27 +318,43 @@ body {
     }
 }
 
+.modal-content::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라 스크롤바 삭제 */
+}
+
 .modal-content {
     display: none;
-    background-color: #F0F9FC;
-    margin: 10% auto;
-    padding: 20px;
-    border: 1px solid #888;
-    width: 30%;
-    height: 60%;
-    
-    //width: 550px;
-    //height: 600px;
-    text-align: center;
     
     @include laptop{
         display: block;
+        -ms-overflow-style: none; /* 익스플로러, 앳지 스크롤바 삭제*/
+        scrollbar-width: none; /* 파이어폭스 스크롤바 삭제*/
         background-color: #F0F9FC;
         margin: 10% auto;
         padding: 20px;
         border: 1px solid #888;
-        width: 30%;
-        height: 60%;
+        width: 50%;
+        height: 70%;
+        //text-align: center;
+        border-radius: 30px;
+        overflow-y: scroll;
+        min-width: 646px;
+        max-width: 712px;
+        ul{
+            list-style:none;
+            padding-left:0px;
+        }
+        span{
+            display: flex;
+            margin-top: 14px;
+            justify-content: center;
+        }
+        img{
+            width: 100px;
+        }
+        h3{
+            background-color: #cfcfcf;
+        }
     }
 
     @include desktop{
@@ -347,38 +363,74 @@ body {
         margin: 10% auto;
         padding: 20px;
         border: 1px solid #888;
-        width: 30%;
-        height: 60%;
+        width: 50%;
+        height: 70%;
+        //text-align: center;
+        border-radius: 30px;
     }
 }
 
-.modal_frame{
-    display: none;
+.manual_thema_logo{
+    flex-direction: column;
+    color: #ffffff;
+}
+
+//사용방법 색 구별
+#forestgreen{
     justify-content: center;
+    background-color: forestgreen;
+}
+#turquoise{
+    justify-content: center;
+    background-color: turquoise;
+}
+#cobalt_blue{
+    justify-content: center;
+    background-color: #00498c;
+}
+#cadetblue {
+    justify-content: center;
+    background-color: cadetblue;
+}
+
+.modal_frame{ //사용방법 제목 부분
+    display: none;
+    
     
     @include laptop{
         display: flex;
+        justify-content: center;
+        height: 13%;
     }
 
     @include desktop{
         display: flex;
+        justify-content: center;
     }
 
 }
 
 .close {
-    position: absolute;
-    right:35%;
-    //right: 10px;
-    font-size: 20px;
-    font-weight: bold;
-    cursor: pointer;
+    display: none;
+
     @include laptop{
         display: block;
+        position: relative;
+        left:35%;
+        //right: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
     }
 
     @include desktop{
         display: block;
+        position: relative;
+        left:35%;
+        //right: 10px;
+        font-size: 20px;
+        font-weight: bold;
+        cursor: pointer;
     }
 }
 
@@ -898,6 +950,80 @@ body {
     text-align: center;
     margin-right: 0;
     background-color: #fff;
+}
+
+.mobile_modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #000000b3;
+    animation: fadein .5s;
+    @include laptop{
+        display: none; 
+    }
+
+    @include desktop{
+        display: none; 
+    }
+}
+
+.mobile_modal-content::-webkit-scrollbar {
+    display: none; /* 크롬, 사파리, 오페라 스크롤바 삭제 */
+}
+
+//모바일 사용방법 팝업창
+.mobile_modal-content {
+    display: block;
+    -ms-overflow-style: none; /* 익스플로러, 앳지 스크롤바 삭제*/
+    scrollbar-width: none; /* 파이어폭스 스크롤바 삭제*/
+    background-color: #F0F9FC;
+    margin: 25% auto;
+    padding: 2.5%;
+    border: 1px solid #888;
+    width: 85%;
+    height: 70%;
+    min-width: 389px;
+    max-width: 389px;
+    // text-align: center;
+    border-radius: 20px;
+    overflow-y: scroll;
+    ul{
+        list-style: none;
+        padding-left: 0px;
+    }
+    img{
+        width: 100px;
+    }
+    span{
+        display: inline-block;
+        justify-content: center;
+    }
+    h3{
+        background-color: #cfcfcf;
+    }
+    
+}
+
+.mobile_manual_thema_logo{
+    flex-direction: column;
+    color: #ffffff;
+}
+
+.mobile_modal_frame{
+    display: flex;
+    justify-content: center;
+    height: 11%;
+}
+
+.mobile_close{
+    display: block;
+    position: relative;
+    margin-left: 55%;
+    margin-top: 7px;
 }
 
 // ================모바일 정보 요약창 버튼================
