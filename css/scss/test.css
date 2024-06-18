@@ -115,11 +115,17 @@ body {
 @media (min-width: 1020px) {
   .desktop-drawing-buttons {
     display: flex;
+    position: absolute;
+    right: 120px;
+    top: 55px;
   }
 }
 @media (min-width: 1400px) {
   .desktop-drawing-buttons {
     display: flex;
+    right: 120px;
+    position: absolute;
+    top: 55px;
   }
 }
 
@@ -132,9 +138,9 @@ body {
   box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
   color: white;
   margin-top: 15px;
-  margin-right: 10px;
+  margin-right: 45px;
   width: 160px;
-  height: 40px;
+  height: 40x;
   font-size: 16px;
 }
 

@@ -141,14 +141,20 @@ body {
     border-left: none;
 }
   
+
 .desktop-drawing-buttons {
     display: none;
-
     @include laptop {
         display: flex;
+        position: absolute;
+        right: 120px;
+        top: 55px;
     }
    @include desktop{
         display:flex;
+        right: 120px;
+        position: absolute;
+        top: 55px;
     }
 }
 #drawing-desktop {
@@ -160,9 +166,9 @@ body {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
     color: white;
     margin-top: 15px;
-    margin-right: 10px;
+    margin-right: 45px;
     width: 160px;
-    height: 40px;
+    height: 40x;
     font-size: 16px;
 }
 #delete-desktop {
@@ -179,7 +185,6 @@ body {
     font-size: 14px;
     font-weight: bold;
 }
-
 //nav태그 내려오는 애니메이션
 @keyframes navbarBottom {
     0% {
