@@ -1,0 +1,17 @@
+.markerForTheme {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: Aquamarine; /* 배경 색상 */
+    border: 2px solid #ffff; /* 녹색 테두리 */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.3); /* 그림자 */
+}
+
+.markerForTheme img {
+    width: 18px;
+    height: 18px;
+}
+
