@@ -79,7 +79,13 @@
                 <li>&nbsp;&nbsp;&nbsp;&nbsp;<strong>거리순</strong>: 자전거 코스의 길이에 따른 필터를 제공합니다.</li> 
                 <li>&nbsp;&nbsp;&nbsp;&nbsp;<strong>위치</strong>: 자전거 코스가 속한 위치(구/군 기준)에 따른 필터를 제공합니다.</li> 
                 <li>&nbsp;&nbsp;&nbsp;&nbsp;<strong>풍경</strong>: 주변 풍경(공원,강변, 바다, 도시)에 따른 필터를 제공합니다.</li></p>
-            <p><h3>지도에 표시되는 마커나 선을 클릭 시 좌측 요약창에 정보가 표시됩니다.</h3></p>
+            </ul>
+            <ul><p><h3>지도에 표시되는 마커나 선을 클릭 시 좌측 요약창에 정보가 표시됩니다.</h3>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;<strong>관광지명</strong>: 클릭 시 관련 정보 사이트로 연결됩니다.</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;<strong>거리</strong>: 코스의 총 거리를 나타냅니다.</li>
+                <li>&nbsp;&nbsp;&nbsp;&nbsp;<strong>시작/도착 위치</strong>: 시작/도착 위치의 주소를 나타냅니다.</li>
+                </p>
+            </ul>
             <p><h3>추천 코스는 테마에 따라 4가지 색으로 표현됩니다.</h3>
                 <span class="manual_thema">&nbsp;&nbsp;
                     <span class="manual_thema_logo" ><img src="../images/park_marker.png"><span id="forestgreen">공원</span></span>
@@ -122,8 +128,8 @@
                 <div class="lb-wrap">
                     <a href="#" id="link" target="_blank"><img src="..\images\bike-default.jpg" id="image" class="aside-image" width="240" ,
                             height="300"></a>
-                    <a href="#" id="attraction" class="linkT" target="_blank">코스 이름</a>
-                    <p class="describe">표시된 코스를 누르면 해당 자전거 코스를 소개합니다.</p>
+                    <a href="#" id="attraction" class="linkT" target="_blank">관광지</a>
+                    <p class="describe">표시된 코스를 누르시면 <br>해당 자전거 코스를 소개합니다.</p>
                 </div>
                 <div class="text-infor">
                     <p style="font-size: 15px;">시작 위치: <br><span class="gugunNm"></span><br><span
@@ -213,7 +219,7 @@
                 </div>
                 <!--이미지 옆 설명텍스트-->
                 <div class="mobile-text-info"> 
-                    <p style="font-weight: bolder; font-size: 110%;"><a href="#" id="attraction" class="mobile-link" target="_blank">코스 이름</a></p>
+                    <p style="font-weight: bolder; font-size: 110%;"><a href="#" id="attraction" class="mobile-link" target="_blank">관광지</a></p>
                     <hr>
                     <p><span style="font-weight: bolder;">거리: </span><span class="total"></span>KM</p>
                     <hr>
@@ -221,7 +227,7 @@
                     <hr>
                     <p><span style="font-weight: bolder;">도착 위치:</span> <span class="gugunNm"></span><br><span class="endSpot"></span></p>
                     <hr>
-                    <p class="describe">표시된 코스를 누르면 해당 자전거 코스를 소개합니다.</p>
+                    <p class="describe">표시된 코스를 누르시면<br> 해당 자전거 코스를 소개합니다.</p>
                     <hr>
                 </div>
             </div>
@@ -232,11 +238,21 @@
                     <h1>사용방법</h1>
                     <span class="mobile_close" id="mobile_closeModalButton">&times;</span>
                 </div>
-                <ul><h3>왼쪽 상단의 메뉴 버튼을 클릭 시 <br> 필터를 사용할 수 있습니다.</h3>
-                    <li>&nbsp;&nbsp;&nbsp;&nbsp;'거리순' 필터> 자전거 코스의 길이</li> 
-                    <li>&nbsp;&nbsp;&nbsp;&nbsp;'장소' 필터> 각 구마다의 코스</li> 
-                    <li>&nbsp;&nbsp;&nbsp;&nbsp;'풍경' 필터> 공원이나 바다 같은 주변 풍경</li></p>
-                <p><h3>지도 위의 마커나 선을 클릭 시<br>하단에 있는 요약창에 정보가 표시됩니다.</h3></p>
+                <ul><p><h3>왼쪽 상단의 메뉴 버튼을 클릭 시 <br> 필터를 사용할 수 있습니다.</h3>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;<strong>거리순</strong>: 자전거 코스의 길이에 따른 필터를 제공합니다.</li> 
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;<strong>위치</strong>: 자전거 코스가 속한 위치(구/군 기준)에 따른
+                                                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                        필터를 제공합니다.</li> 
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;<strong>풍경</strong>: 주변 풍경(공원,강변, 바다, 도시)에 따른
+                                                                    <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                                                        필터를 제공합니다.</li></p>
+                </ul>
+                <ul><p><h3>지도 위의 마커나 선을 클릭 시<br>하단에 있는 요약창에 정보가 표시됩니다.</h3>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;<strong>관광지명</strong>: 클릭 시 관련 정보 사이트로 연결됩니다.</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;<strong>거리</strong>: 코스의 총 거리를 나타냅니다.</li>
+                    <li>&nbsp;&nbsp;&nbsp;&nbsp;<strong>시작/도착 위치</strong>: 시작/도착 위치의 주소를 나타냅니다.</li>
+                </p>
+                </ul>
                 <p><h3>추천 코스는 테마에 따라<br> 4가지 색으로 표현됩니다.</h3>
                     <span class="mobile_manual_thema" style="text-align: center;">
                         <span class="mobile_manual_thema_logo" ><img src="../images/park_marker.png"><span id="forestgreen">공원</span></span>
@@ -255,7 +271,6 @@
                         <br> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;> 마우스 우클릭 마무리<br><br></li>
                     <li>&nbsp;&nbsp;&nbsp;&nbsp;<strong>코스 삭제시</strong> : '삭제' 버튼 클릭 <br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(가장 마지막에 그렸던 코스부터 개별 삭제됩니다.)<br><br></li>
                     <li>&nbsp;&nbsp;&nbsp;&nbsp;<strong>코스 생성 중 중단</strong>: '취소' 버튼 클릭</li>
-                </ul>
             </div>
         </div>
     </div>
