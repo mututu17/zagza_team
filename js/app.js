@@ -298,7 +298,7 @@ $.extend(Drawing.prototype, {
         if (!this._polyline) {
             //임시로 보여줄 점선 
             this._guideline = new naver.maps.Polyline({
-                strokeColor: '#f00',
+                strokeColor: '#800080',
                 strokeWeight: 5,
                 strokeStyle: [4, 4],
                 strokeOpacity: 0.6,
@@ -309,7 +309,7 @@ $.extend(Drawing.prototype, {
             $(document).on('mousemove.drawing', this._onMouseMoveDrawing.bind(this)); //점선에서 클릭하면 실선으로 표시
             this._drawingListeners.push(naver.maps.Event.addListener(map, 'rightclick', this._finishDrawing.bind(this)));
             this._polyline = new naver.maps.Polyline({
-                strokeColor: '#f00',
+                strokeColor: '#800080',
                 strokeWeight: 5,
                 strokeOpacity: 0.8,
                 path: [coord],
