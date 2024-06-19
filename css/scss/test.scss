@@ -357,13 +357,20 @@ body {
         img{
             width: 100px;
         }
+        h1{
+            text-align: center;
+        }
         h3{
             background-color: #cfcfcf;
+            border-radius: 30px;
+            text-align: center;
         }
     }
 
     @include desktop{
         display: block;
+        -ms-overflow-style: none; /* 익스플로러, 앳지 스크롤바 삭제*/
+        scrollbar-width: none; /* 파이어폭스 스크롤바 삭제*/
         background-color: #F0F9FC;
         margin: 10% auto;
         padding: 20px;
@@ -372,6 +379,27 @@ body {
         height: 70%;
         //text-align: center;
         border-radius: 30px;
+        overflow-y: scroll;
+        min-width: 646px;
+        max-width: 712px;
+        ul{
+            list-style:none;
+            padding-left:0px;
+        }
+        span{
+            display: flex;
+            margin-top: 14px;
+            justify-content: center;
+        }
+        img{
+            width: 100px;
+        }
+        h3{
+            background-color: #cfcfcf;
+            border-radius: 30px;
+            text-align: center;
+
+        }
     }
 }
 
@@ -1007,8 +1035,13 @@ body {
         display: inline-block;
         justify-content: center;
     }
+    h1{
+        text-align: center;
+    }
     h3{
         background-color: #cfcfcf;
+        border-radius: 30px;
+        text-align: center;
     }
     
 }

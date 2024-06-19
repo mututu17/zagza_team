@@ -586,7 +586,7 @@ function moveMapForFilter(map, placeFilter) {
     
 }
 
-$("#장소").change(function () {
+$("#위치").change(function () {
     let filters = [];
     if (($(window).width() <= 768)) {   // 모바일일 때
         $(".filter-comboBox").each(function () {

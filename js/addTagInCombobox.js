@@ -16,7 +16,7 @@ const makeHtmlElement = function (tagName, ...attr) {
 };
 
 // INIT VARIABLE
-const placeElements = document.querySelectorAll("#장소");
+const placeElements = document.querySelectorAll("#위치");
 
 let isExist = []; // 중복 여부 판정 위한 임시 배열
 
