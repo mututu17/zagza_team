@@ -126,9 +126,9 @@
             </label>
             <nav class="information"> <!--설명 부분을 nav 박스로 감싸고 class명을 information으로 추가-->
                 <div class="lb-wrap">
-                    <a href="#" id="link" target="_blank"><img src="..\images\bike-default.jpg" id="image" class="aside-image" width="240" ,
-                            height="300"></a>
-                    <a href="#" id="attraction" class="linkT" target="_blank">관광지</a>
+                    <img src="..\images\bike-default.jpg" id="image" class="aside-image" width="240" ,
+                            height="300">
+                    <a href="#" id="link" class="linkT" target="_blank"><span id="attraction">관광지</span></a>
                     <p class="describe">표시된 코스를 누르시면 <br>해당 자전거 코스를 소개합니다.</p>
                 </div>
                 <div class="text-infor">
@@ -215,11 +215,12 @@
         <aside id="mobile-aside" class="closed">
             <div class="mobile-aside-container">
                 <div class="mobile-image-wrapper">
-                    <a href="#" id="link" target="_blank"><img src="..\images\bike-default.jpg" id="image" class="mobile-image"></a>
+                    <img src="..\images\bike-default.jpg" id="image" class="mobile-image">
                 </div>
                 <!--이미지 옆 설명텍스트-->
                 <div class="mobile-text-info"> 
-                    <p style="font-weight: bolder; font-size: 110%;"><a href="#" id="attraction" class="mobile-link" target="_blank">관광지</a></p>
+                    <p style="font-weight: bolder; font-size: 110%;"><a href="#" id="link" class="mobile-link" target="_blank">
+                        <span id="attraction">관광지</span></a></p>
                     <hr>
                     <p><span style="font-weight: bolder;">거리: </span><span class="total"></span>KM</p>
                     <hr>
