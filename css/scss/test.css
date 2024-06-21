@@ -325,13 +325,20 @@ body {
   .modal-content img {
     width: 100px;
   }
+  .modal-content h1 {
+    text-align: center;
+  }
   .modal-content h3 {
     background-color: #cfcfcf;
+    border-radius: 30px;
+    text-align: center;
   }
 }
 @media (min-width: 1400px) {
   .modal-content {
     display: block;
+    -ms-overflow-style: none; /* 익스플로러, 앳지 스크롤바 삭제*/
+    scrollbar-width: none; /* 파이어폭스 스크롤바 삭제*/
     background-color: #F0F9FC;
     margin: 10% auto;
     padding: 20px;
@@ -339,6 +346,26 @@ body {
     width: 50%;
     height: 70%;
     border-radius: 30px;
+    overflow-y: scroll;
+    min-width: 646px;
+    max-width: 712px;
+  }
+  .modal-content ul {
+    list-style: none;
+    padding-left: 0px;
+  }
+  .modal-content span {
+    display: flex;
+    margin-top: 14px;
+    justify-content: center;
+  }
+  .modal-content img {
+    width: 100px;
+  }
+  .modal-content h3 {
+    background-color: #cfcfcf;
+    border-radius: 30px;
+    text-align: center;
   }
 }
 
@@ -967,8 +994,13 @@ body {
   display: inline-block;
   justify-content: center;
 }
+.mobile_modal-content h1 {
+  text-align: center;
+}
 .mobile_modal-content h3 {
   background-color: #cfcfcf;
+  border-radius: 30px;
+  text-align: center;
 }
 
 .mobile_manual_thema_logo {
