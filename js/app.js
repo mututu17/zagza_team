@@ -265,7 +265,9 @@ $.extend(Drawing.prototype, {
         var ms = new naver.maps.Marker({
             position: coord,
             icon: {
-                content: '<div style="display:inline-block;padding:5px;text-align:center;background-color:#fff;border:1px solid #000;"><span>' + text + '</span></div>',
+                content: '<div style="display:inline-block;padding:5px;'+
+                'text-align:center;background-color:#fff;border:1px solid #000;"><span>'
+                 + text + '</span></div>',
                 anchor: new naver.maps.Point(-5, -5)
             },
             map: this.map
@@ -414,8 +416,8 @@ function togglePolylineMarkerVisibility(zoomThreshold, pastZoom, currentZoom) {
     // zoomThreshold값을 기준으로 current값과 past값은 반대에 있어야 함
 
     // 폴리라인 -> 마커
-    if (currentZoom < zoomThreshold && pastZoom >= zoomThreshold) { //줌 레벨에 따라 자전거도로 와 마커 중 하나만 활성화됨
-        
+    if (currentZoom < zoomThreshold && pastZoom >= zoomThreshold) { 
+        //줌 레벨에 따라 자전거도로 와 마커 중 하나만 활성화됨
         // PC
         currentMarkerArray.forEach((marker, index) => {
             marker.setVisible(currentPolylineArray[index].getVisible());                       
