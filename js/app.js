@@ -55,7 +55,8 @@ function addMarkers(map, polylinePath, index) {
         let midMarker = new naver.maps.Marker({
             position: polylinePath[midIndex],
             icon: {
-                content: '<div class="markerForTheme" style="background-color:'+ markerColor + ';"><img src="../images/logo.png" alt="자전거 마커"></div>',        // 테마마다 마커 스타일 변경
+                content: '<div class="markerForTheme" style="background-color:'+ markerColor + ';">'+
+                '<img src="../images/logo.png" alt="자전거 마커"></div>',       // 테마마다 마커 스타일 변경
                 size: new naver.maps.Size(28, 28),                      // css height, width 와 동일
                 anchor: new naver.maps.Point(14, 14),                   // size의 절반값
             },
@@ -445,19 +446,19 @@ function togglePolylineMarkerVisibility(zoomThreshold, pastZoom, currentZoom) {
         
         // PC
         currentMarkerArray.forEach((marker, index) => {
-            marker.setVisible(currentPolylineArray[index].getVisible());                       // 폴리라인의 현재 필터링 상태(visible 값)을 marker에 적용
+            marker.setVisible(currentPolylineArray[index].getVisible());                       
+            // 폴리라인의 현재 필터링 상태(visible 값)을 marker에 적용
         });                 
-        currentPolylineArray.forEach(polyline => polyline.setVisible(false));                  // 폴리라인은 안 보이게 만듦   
-
-        
-        
+        currentPolylineArray.forEach(polyline => polyline.setVisible(false));                  
+        // 폴리라인은 안 보이게 만듦 
     } 
     // 마커 -> 폴리라인
     else if (currentZoom >= zoomThreshold && pastZoom < zoomThreshold) {
 
         // PC
         currentPolylineArray.forEach((polyline, index) => {
-            polyline.setVisible(currentMarkerArray[index].getVisible());                       // 마커의 현재 필터링 상태(visible 값)을 폴리라인에 적용
+            polyline.setVisible(currentMarkerArray[index].getVisible());                       
+            // 마커의 현재 필터링 상태(visible 값)을 폴리라인에 적용
         }); 
         currentMarkerArray.forEach(marker => marker.setVisible(false));
 
@@ -547,40 +548,40 @@ function moveMapForFilter(map, placeFilter) {
             map.morph(new naver.maps.LatLng(35.1455383782275, 129.113125189097), 12);
             break;
         case "부산광역시 강서구":
-            map.morph(new naver.maps.LatLng(35.11747262855339, 128.8976639577871), 12);  // 강서구 좌표
+            map.morph(new naver.maps.LatLng(35.11747262855339, 128.8976639577871), 12);  
             console.log("강서구 이동 완료");
             break;
         case "부산광역시 남구":
-            map.morph(new naver.maps.LatLng(35.1365226602861, 129.084238267311), 12);  // 남구 좌표
+            map.morph(new naver.maps.LatLng(35.1365226602861, 129.084238267311), 12);  
             console.log("남구 이동 완료");
             break;
         case "부산광역시 사하구":
-            map.morph(new naver.maps.LatLng(35.1044479031499, 128.974932970702), 12);  // 사하구 좌표
+            map.morph(new naver.maps.LatLng(35.1044479031499, 128.974932970702), 12);  
             console.log("사하구 이동 완료");
             break;
         case "부산광역시 사상구":
-            map.morph(new naver.maps.LatLng(35.1525493288331, 128.991447758162), 12);  // 사상구 좌표
-            console.log("강서구 이동 완료");
+            map.morph(new naver.maps.LatLng(35.1525493288331, 128.991447758162), 12);  
+            console.log("사상구 이동 완료");
             break;
         case "부산광역시 북구":
-            map.morph(new naver.maps.LatLng(35.197295941285, 128.990036594502), 12);  // 강서구 좌표
-            console.log("강서구 이동 완료");
+            map.morph(new naver.maps.LatLng(35.197295941285, 128.990036594502), 12);  
+            console.log("북구 이동 완료");
             break;
         case "부산광역시 기장군":
-            map.morph(new naver.maps.LatLng(35.2444181044945, 129.222422056732), 12);  // 강서구 좌표
-            console.log("강서구 이동 완료");
+            map.morph(new naver.maps.LatLng(35.2444181044945, 129.222422056732), 12);  
+            console.log("기장군 이동 완료");
             break;
         case "부산광역시 해운대구":
-            map.morph(new naver.maps.LatLng(35.1630666685425, 129.16359608401), 12);  // 강서구 좌표
-            console.log("강서구 이동 완료");
+            map.morph(new naver.maps.LatLng(35.1630666685425, 129.16359608401), 12);  
+            console.log("해운구 이동 완료");
             break;
         case "부산광역시 서구":
-            map.morph(new naver.maps.LatLng(35.0979235209887, 129.024298440459), 12);  // 강서구 좌표
-            console.log("강서구 이동 완료");
+            map.morph(new naver.maps.LatLng(35.0979235209887, 129.024298440459), 12);  
+            console.log("서구 이동 완료");
             break;
         case "부산광역시 부산진구":
-            map.morph(new naver.maps.LatLng(35.1628554465167, 129.053165443787), 12);  // 강서구 좌표
-            console.log("강서구 이동 완료");
+            map.morph(new naver.maps.LatLng(35.1628554465167, 129.053165443787), 12);  
+            console.log("부산진구 이동 완료");
             break;
     }
     
