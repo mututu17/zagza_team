@@ -183,7 +183,6 @@ function addPolyline(map, polylinePath, index) {
 var Drawing = function(buttons) { //생성자
     this.$btnDrawing = buttons.drawing; //자전거도로 그리기 버튼
     this.$btnDelete = buttons.delete; //그렸던 도로 개별 삭제 버튼
-    this._mode = null;
     this._polylines = []; //그리기로 그려진 폴리라인을 담을 배열
     this._ms = []; // 그리기로 그려진 마일스톤을 폴리라인 단위로 담을 배열
     this._currentMs = []; // 현재 그리기 중인 마일스톤
@@ -203,14 +202,7 @@ $.extend(Drawing.prototype, {
             this._bindMap(map);
         }
     },
-
-    startMode: function(mode) {
-        if (!mode) return;
-        if (mode === 'drawing') {
-            this._startDrawing();
-        }
-    },
-
+    
     _startDrawing: function() {
         var map = this.map;
 
@@ -253,14 +245,6 @@ $.extend(Drawing.prototype, {
         this.map.setCursor('auto');
 
         delete this._lastDistance;
-        this._mode = null;
-    },
-
-    finishMode: function(mode) { 
-        if (!mode) return;
-        if (mode === 'drawing') {
-            this._finishDrawing();
-        }
     },
 
     _fromMetersToText: function(meters) { 
@@ -369,14 +353,13 @@ $.extend(Drawing.prototype, {
             }
         }
 
-        this._clearMode(this._mode);
+        this._clearMode();
     },
-    _onClickButton: function(newMode, e) { //자전거 코스 그리기 버튼 
+    _onClickButton: function(e) { //자전거 코스 그리기 버튼 
         e.preventDefault();
 
         var btn = $(e.target),
-            map = this.map,
-            mode = this._mode;
+            map = this.map;
 
             if (btn.hasClass('control-on')) {
                 btn.removeClass('control-on');
@@ -386,21 +369,10 @@ $.extend(Drawing.prototype, {
                 btn.text('취소'); // 모드 활성화 시 텍스트 변경
             }
 
-        this._clearMode(mode);
-
-        if (mode === newMode) {
-            this._mode = null;
-            return;
-        }
-
-        this._mode = newMode;
-
-        this.startMode(newMode);
+        this._clearMode();
+        this._startDrawing();
     },
-    _clearMode: function(mode) { //그리기가 끝날 때 처리
-        if (!mode) return;
-        
-        if (mode === 'drawing') {
+    _clearMode: function() { //그리기가 끝날 때 처리
             if (this._polyline) {
                 this._polyline.setMap(null);
                 delete this._polyline;
@@ -412,7 +384,7 @@ $.extend(Drawing.prototype, {
                 }
                 this._currentMs = [];
             }
-        }
+        
     }
 });
 
