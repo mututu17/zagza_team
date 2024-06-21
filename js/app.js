@@ -202,7 +202,7 @@ $.extend(Drawing.prototype, {
             this._bindMap(map);
         }
     },
-    
+
     _startDrawing: function() {
         var map = this.map;
 
@@ -291,8 +291,10 @@ $.extend(Drawing.prototype, {
                 map: map
             });
 
-            $(document).on('mousemove.drawing', this._onMouseMoveDrawing.bind(this)); //점선에서 클릭하면 실선으로 표시
-            this._drawingListeners.push(naver.maps.Event.addListener(map, 'rightclick', this._finishDrawing.bind(this)));
+            $(document).on('mousemove.drawing', this._onMouseMoveDrawing.bind(this)); 
+            //점선에서 클릭하면 실선으로 표시
+            this._drawingListeners.push
+            (naver.maps.Event.addListener(map, 'rightclick', this._finishDrawing.bind(this)));
             this._polyline = new naver.maps.Polyline({
                 strokeColor: '#800080',
                 strokeWeight: 5,
@@ -333,7 +335,7 @@ $.extend(Drawing.prototype, {
     },
 
     _bindDOMEvents: function() {
-        this.$btnDrawing.on('click.drawing', this._onClickButton.bind(this, 'drawing'));
+        this.$btnDrawing.on('click.drawing', this._onClickButton.bind(this));
         //자전거도로 그리기 버튼 클릭 시 _onclickButton 실행
         this.$btnDelete.on('click.delete', this._deleteOne.bind(this)); 
         //삭제 버튼 클릭 시 _deleteAll 실행
@@ -355,22 +357,21 @@ $.extend(Drawing.prototype, {
 
         this._clearMode();
     },
-    _onClickButton: function(e) { //자전거 코스 그리기 버튼 
+    _onClickButton: function(e) { // 자전거 코스 그리기 버튼
         e.preventDefault();
 
         var btn = $(e.target),
             map = this.map;
 
-            if (btn.hasClass('control-on')) {
-                btn.removeClass('control-on');
-                btn.text('자전거도로 그리기'); // 모드 비활성화 시 텍스트 변경
-            } else {
-                btn.addClass('control-on');
-                btn.text('취소'); // 모드 활성화 시 텍스트 변경
-            }
-
-        this._clearMode();
-        this._startDrawing();
+        if (btn.hasClass('control-on')) {
+            btn.removeClass('control-on');
+            btn.text('자전거도로 그리기'); // 모드 비활성화 시 텍스트 변경
+            this._clearMode();
+        } else {
+            btn.addClass('control-on');
+            btn.text('취소'); // 모드 활성화 시 텍스트 변경
+            this._startDrawing();
+        }
     },
     _clearMode: function() { //그리기가 끝날 때 처리
             if (this._polyline) {
@@ -384,7 +385,6 @@ $.extend(Drawing.prototype, {
                 }
                 this._currentMs = [];
             }
-        
     }
 });
 
