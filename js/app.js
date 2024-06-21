@@ -9,7 +9,7 @@ let markerArrayForPC = [];          // PC에서 마커를 담을 배열
 let polylineArrayForMobile = [];    // 모바일에서 폴리라인을 담을 배열
 let markerArrayForMobile = [];      // 모바일에서 마커를 담을 배열
 
-// 자전거 도로 클릭시 변화하는 코드를 함수로 정의
+// 자전거 코스 클릭시 변화하는 코드를 함수로 정의
 function addPolylineEvents(polyline, index) {
     const highlight = () => polyline.setOptions({ strokeWeight: 20 });
     const unhighlight = () => polyline.setOptions({ strokeWeight: 6 });
@@ -249,7 +249,7 @@ $.extend(Drawing.prototype, {
         }
 
         this.$btnDrawing.removeClass('control-on').blur();
-        this.$btnDrawing.text('자전거 도로 그리기');
+        this.$btnDrawing.text('자전거 코스 그리기');
         this.map.setCursor('auto');
 
         delete this._lastDistance;
@@ -354,7 +354,7 @@ $.extend(Drawing.prototype, {
         this.$btnDelete.on('click.delete', this._deleteOne.bind(this)); 
         //삭제 버튼 클릭 시 _deleteAll 실행
     },
-    _deleteOne: function(e) { //그렸던 개별 자전거 도로를 하나씩 지우는 버튼
+    _deleteOne: function(e) { //그렸던 개별 자전거 코스를 하나씩 지우는 버튼
         e.preventDefault();
 
         if (this._polylines.length > 0) {
@@ -371,7 +371,7 @@ $.extend(Drawing.prototype, {
 
         this._clearMode(this._mode);
     },
-    _onClickButton: function(newMode, e) { //자전거 도로 그리기 버튼 
+    _onClickButton: function(newMode, e) { //자전거 코스 그리기 버튼 
         e.preventDefault();
 
         var btn = $(e.target),
