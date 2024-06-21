@@ -181,8 +181,8 @@ function addPolyline(map, polylinePath, index) {
     });
 }
 var Drawing = function(buttons) { //생성자
-    this.$btnDrawing = buttons.drawing; //자전거도로 그리기 버튼
-    this.$btnDelete = buttons.delete; //그렸던 도로 개별 삭제 버튼
+    this.$btnDrawing = buttons.drawing; //자전거코스 그리기 버튼
+    this.$btnDelete = buttons.delete; //그렸던 코스 개별 삭제 버튼
     this._polylines = []; //그리기로 그려진 폴리라인을 담을 배열
     this._ms = []; // 그리기로 그려진 마일스톤을 폴리라인 단위로 담을 배열
     this._currentMs = []; // 현재 그리기 중인 마일스톤
@@ -276,7 +276,7 @@ $.extend(Drawing.prototype, {
         this._currentMs.push(ms); //생성된 마일스톤은 배열에 임시로 담김
     },
 //
-    _onClickDrawing: function(e) { //클릭해서 도로를 그리는 함수
+    _onClickDrawing: function(e) { //클릭해서 코스를 그리는 함수
         var map = this.map,
             coord = e.coord;
 
@@ -336,7 +336,7 @@ $.extend(Drawing.prototype, {
 
     _bindDOMEvents: function() {
         this.$btnDrawing.on('click.drawing', this._onClickButton.bind(this));
-        //자전거도로 그리기 버튼 클릭 시 _onclickButton 실행
+        //자전거코스 그리기 버튼 클릭 시 _onclickButton 실행
         this.$btnDelete.on('click.delete', this._deleteOne.bind(this)); 
         //삭제 버튼 클릭 시 _deleteAll 실행
     },
@@ -365,7 +365,7 @@ $.extend(Drawing.prototype, {
 
         if (btn.hasClass('control-on')) {
             btn.removeClass('control-on');
-            btn.text('자전거도로 그리기'); // 모드 비활성화 시 텍스트 변경
+            btn.text('자전거코스 그리기'); // 모드 비활성화 시 텍스트 변경
             this._clearMode();
         } else {
             btn.addClass('control-on');
